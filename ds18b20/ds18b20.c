@@ -83,7 +83,7 @@ void display_number_dot(uint32_t number, uint8_t dot_pos, uint8_t is_negative) {
     uint8_t pos=1;
     if (number == 0)
         output_max(pos++, 0);
-    while (number > 0) {
+    while (number > 0 || dot_pos >= pos) {
         uint8_t digit = number % 10;
         if (pos == dot_pos) {
             digit = digit | 0x80;
